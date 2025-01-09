@@ -10,3 +10,4 @@ else
 fi
 sudo apt update
 echo "my name is sai charan"
+echo "$0"
