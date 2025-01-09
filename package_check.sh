@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-for packages in $#
+for packages in $@
 do
     sudo apt list --installed | grep $packages
     if [ $? -eq 0 ];
