@@ -1,6 +1,6 @@
 #!/bin/bash
 date +%x
-ID=(id -u) 
+ID=$(id -u) 
 if [ $ID -eq 0 ];
 then 
     echo "you are root user . good to go , thank you"
