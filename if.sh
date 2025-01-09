@@ -3,7 +3,7 @@ date +%x
 ID=(id -u) 
 if [ $ID -eq 0 ];
 then 
-    echo "you are root user"
+    echo "you are root user . good to go"
 else
     echo " you are not a root user"
 fi
