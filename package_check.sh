@@ -1,8 +1,8 @@
 #!/bin/bash
-sudo apt list --installed | grep java
+sudo apt list --installed | grep $1
 if [ $? -eq 0 ];
 then
-    echo "java installed"
+    echo "$1 installed"
 else
-    echo "java not installed"
+    echo "$1 not installed"
 fi
