@@ -7,5 +7,5 @@ then
 else
     echo " you are not a root user"
 fi
-apt update
+sudo apt update
 echo "my name is sai charan"
