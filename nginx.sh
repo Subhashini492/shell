@@ -9,17 +9,17 @@ validate (){
     fi
 }
 
-sudo apt update &>>/tmp/$0
+sudo apt update &>>/tmp/nginx.log
 validate $? "update"
 
-sudo apt install nginx &>>/tmp/$0
+sudo apt install nginx &>>/tmp/nginx.log
 validate $? "install nginx"
 
-sudo systemctl start nginx &>>/tmp/$0
+sudo systemctl start nginx &>>/tmp/nginx.log
 validate $? "start nginx"
 
-sudo systemctl enable nginx &>>/tmp/$0
+sudo systemctl enable nginx &>>/tmp/nginx.log
 validate $? "enable  nginx"
 
-sudo systemctl status nginx &>>/tmp/$0
+sudo systemctl status nginx &>>/tmp/nginx.log
 validate $? "status nginx"
