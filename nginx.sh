@@ -21,5 +21,3 @@ validate $? "start nginx"
 sudo systemctl enable nginx &>>/tmp/nginx.log
 validate $? "enable  nginx"
 
-sudo systemctl status nginx &>>/tmp/nginx.log
-validate $? "status nginx"
