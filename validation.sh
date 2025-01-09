@@ -5,34 +5,34 @@ then
    echo "failure"
    exit 1
 else
-    echo "true"
+    echo "true "
 fi
 
 ls -la
 if [ $? -ne 0 ];
 then
-   echo "failure"
+   echo "failure ls -la"
    exit 1
 else
-    echo "true"
+    echo "true ls -la" 
 fi
 
 pwf
 if [ $? -ne 0 ];
 then
-   echo "failure"
+   echo "failure pwf"
    exit 1
 else
-    echo "true"
+    echo "true pwf"
 fi
 
 pwd
 if [ $? -ne 0 ];
 then
-   echo "failure"
+   echo "failure pwd"
    exit 1
 else
-    echo "true"
+    echo "true pwd"
 
 fi
     
