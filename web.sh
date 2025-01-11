@@ -18,28 +18,28 @@ validate () {
         exit 1
     fi
 }
-sudo apt install nginx -y &>>/tmp/web.log
+sudo apt install nginx -y  
 validate $? "install nginx"
 
-sudo systemctl start nginx &>>/tmp/web.log
+sudo systemctl start nginx  
 validate $? "start nginx"
 
-sudo systemctl enable nginx &>>/tmp/web.log
+sudo systemctl enable nginx  
 validate $? "enable nginx"
 
-sudo rm -rf /var/www/html/* &>>/tmp/web.log
+sudo rm -rf /var/www/html/*  
 validate $? "defult html files deleted"
 
-curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip &>>/tmp/web.log
+curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip  
 validate $? "downloading artifact in tmp folder"
 
-sudo apt install unzip -y &>>/tmp/web.log
+sudo apt install unzip -y  
 validate $? "installed unzip"
 
-unzip /tmp/web.zip -d /var/www/html &>>/tmp/web.log
+unzip /tmp/web.zip -d /var/www/html 
 validate $? "unzipping web"
 
-sudo systemctl restart nginx &>>/tmp/web.log
+sudo systemctl restart nginx  
 validate $? "restarting nginx"
 
 
