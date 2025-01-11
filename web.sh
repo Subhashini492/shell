@@ -18,7 +18,7 @@ validate () {
         exit 1
     fi
 }
-apt install nginx -Y &>>/tmp/$0
+apt install nginx -y &>>/tmp/$0
 validate $? "install nginx"
 
 systemctl start nginx &>>/tmp/$0
