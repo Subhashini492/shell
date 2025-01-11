@@ -8,7 +8,6 @@ else
     exit 1
 fi 
 
-sudo apt update
 validate () {
     if [ $1 -eq 0 ];
     then 
@@ -18,7 +17,7 @@ validate () {
         exit 1
     fi
 }
-sudo apt install nginx -y  
+sudo yum install nginx -y  
 validate $? "install nginx"
 
 sudo systemctl start nginx  
@@ -27,16 +26,16 @@ validate $? "start nginx"
 sudo systemctl enable nginx  
 validate $? "enable nginx"
 
-sudo rm -rf /var/www/html/*  
+sudo rm -rf /usr/share/nginx/html/*  
 validate $? "defult html files deleted"
 
 curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip  
 validate $? "downloading artifact in tmp folder"
 
-sudo apt install unzip -y  
+sudo yum install unzip -y  
 validate $? "installed unzip"
 
-unzip /tmp/web.zip -d /var/www/html 
+unzip /tmp/web.zip -d /usr/share/nginx/html
 validate $? "unzipping web"
 
 sudo systemctl restart nginx  
