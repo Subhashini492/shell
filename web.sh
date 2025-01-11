@@ -36,7 +36,7 @@ validate $? "downloading artifact in tmp folder"
 sudo apt install unzip -y &>>/tmp/web.log
 validate $? "installed unzip"
 
-unzip /tmp/web.zip -d /var/www/html/ &>>/tmp/web.log
+unzip /tmp/web.zip -d /var/www/html &>>/tmp/web.log
 validate $? "unzipping web"
 
 sudo systemctl restart nginx &>>/tmp/web.log
