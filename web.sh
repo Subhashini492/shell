@@ -17,28 +17,28 @@ validate () {
         exit 1
     fi
 }
-sudo yum install nginx -y  
+sudo yum install nginx -y &>>/tmp/web.log
 validate $? "install nginx"
 
-sudo systemctl start nginx  
+sudo systemctl start nginx &>>/tmp/web.log 
 validate $? "start nginx"
 
-sudo systemctl enable nginx  
+sudo systemctl enable nginx &>>/tmp/web.log  
 validate $? "enable nginx"
 
-sudo rm -rf /usr/share/nginx/html/*  
+sudo rm -rf /usr/share/nginx/html/* &>>/tmp/web.log 
 validate $? "defult html files deleted"
 
-curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip  
+curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip &>>/tmp/web.log 
 validate $? "downloading artifact in tmp folder"
 
-sudo yum install unzip -y  
+sudo yum install unzip -y &>>/tmp/web.log
 validate $? "installed unzip"
 
-unzip /tmp/web.zip -d /usr/share/nginx/html
+unzip /tmp/web.zip -d /usr/share/nginx/html &>>/tmp/web.log
 validate $? "unzipping web"
 
-sudo systemctl restart nginx  
+sudo systemctl restart nginx &>>/tmp/web.log 
 validate $? "restarting nginx"
 
 
