@@ -5,6 +5,7 @@ then
     echo "you are a root user"
 else 
     echo "please run the code with root user"
+    exit 1
 fi 
 
 apt update
