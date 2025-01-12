@@ -74,7 +74,7 @@ validate $? " starting catalogue "
 cp /home/ec2-user/shell/mongo.repo /etc/yum.repos.d/mongo.repo
 validate $? " copying mongo.repo "
 
-yum install mongodb-org-shell -y
+yum install mongodb-org -y
 validate $? " installing mongodb-org-shell "
 
 mongo --host  13.201.137.82 </app/schema/catalogue.js
