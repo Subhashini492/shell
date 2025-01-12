@@ -18,20 +18,20 @@ validate () {
         exit 1
     fi
 }
-cp /home/ec2-user/shell/mongo.repo /etc/yum.repos.d/mongo.repo  
+cp /home/ec2-user/shell/mongo.repo /etc/yum.repos.d/mongodb.repo 
 validate $? " coping mongo.repo "
 
-yum install mongodb-org -y
+sudo yum install mongodb-org -y
 validate $? " installing mongodb-org "
 
-systemctl enable mongod
+sudo systemctl enable mongod
 validate $? " enableing mongodb "
 
-systemctl start mongod
+sudo systemctl start mongod
 validate $? " starting mongodb "
 
 sed 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf
 validate $? " replacing 127.0.0.1 to 0.0.0.0 "
 
-systemctl restart mongod
+sudo systemctl restart mongod
 validate $? " restarting mongodb "
