@@ -77,7 +77,7 @@ validate $? " copying mongo.repo "
 yum install mongodb-org -y
 validate $? " installing mongodb-org-shell "
 
-mongo --host  13.201.137.82 </app/schema/catalogue.js
+mongo --host 13.201.137.82 </app/schema/catalogue.js
 validate $? " loading catalogue schema "
 
 
