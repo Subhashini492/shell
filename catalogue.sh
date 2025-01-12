@@ -34,7 +34,7 @@ validate $? " installing nodejs "
 if id "$USERNAME" &>/dev/null; then
     echo "User '$USERNAME' already exists. Skipping creation."
 else
-   `sudo useradd "$USERNAME"
+   sudo useradd "$USERNAME"
     echo "User '$USERNAME' created successfully."
 fi
 validate $? " adding roboshopuser "
