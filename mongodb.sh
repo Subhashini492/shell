@@ -18,8 +18,8 @@ validate () {
         exit 1
     fi
 }
-cp mongo.repo /etc/yum.repos.d/mongo.repo  
-validate $? "coping mongo.repo"
+cp /home/ec2user/shell/mongo.repo /etc/yum.repos.d/mongo.repo  
+validate $? " coping mongo.repo "
 
 yum install mongodb-org -y
 validate $? " installing mongodb-org "
