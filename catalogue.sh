@@ -71,7 +71,7 @@ validate $? " enabling catalogue "
 systemctl start catalogue
 validate $? " starting catalogue "
 
-cp mongo.repo /etc/yum.repos.d/mongo.repo
+cp /home/ec2-user/shell/mongo.repo /etc/yum.repos.d/mongo.repo
 validate $? " copying mongo.repo "
 
 yum install mongodb-org-shell -y
