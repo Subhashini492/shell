@@ -38,8 +38,11 @@ validate $? "installed unzip"
 unzip /tmp/web.zip -d /usr/share/nginx/html &>>/tmp/web.log
 validate $? "unzipping web"
 
+cp roboshop.conf /etc/nginx/default.d/roboshop.conf 
+validate $? " copying roboshop.conf "
+
 sudo systemctl restart nginx &>>/tmp/web.log 
-validate $? "restarting nginx"
+validate $? " restarting nginx "
 
 
 
