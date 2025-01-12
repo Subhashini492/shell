@@ -45,7 +45,7 @@ validate $? " changing into app directory "
 npm install 
 validate $? " npm install "
 
-cp catalogue.service /etc/systemd/system/catalogue.service
+cp /home/ec2-user/shell/catalogue.service /etc/systemd/system/catalogue.service
 validate $? " copying catalogue service "
 
 systemctl daemon-reload
