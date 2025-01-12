@@ -1,5 +1,9 @@
 #!/bin/bash
 id=$(id -u)
+
+USERNAME="roboshop" 
+DIRECTORY="/app"
+
 if [ $id -eq 0 ];
 then 
     echo "you are a root user"
@@ -27,10 +31,20 @@ validate $? " enableing nodeis "
 yum install nodejs -y
 validate $? " installing nodejs "
 
-useradd roboshop
+if id "$USERNAME" &>/dev/null; then
+    echo "User '$USERNAME' already exists. Skipping creation."
+else
+   `sudo useradd "$USERNAME"
+    echo "User '$USERNAME' created successfully."
+fi
 validate $? " adding roboshopuser "
 
-mkdir /app
+if [ -d "$DIRECTORY" ]; then
+    echo "Directory '$DIRECTORY' already exists. Skipping creation."
+else
+    mkdir -p "$DIRECTORY"
+    echo "Directory '$DIRECTORY' created successfully."
+fi
 validate $? " creating app directory "
 
 curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip
