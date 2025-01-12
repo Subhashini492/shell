@@ -18,7 +18,7 @@ validate () {
         exit 1
     fi
 }
-cp /home/ec2-user/shell/mongo.repo /etc/yum.repos.d/mongodb.repo 
+cp /home/ec2-user/shell/mongo.repo /etc/yum.repos.d/mongodb-org-6.0.repo  
 validate $? " coping mongo.repo "
 
 sudo yum install mongodb-org -y
