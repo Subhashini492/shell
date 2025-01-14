@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ $yum list installed | grep package_name ];
+if [ "yum list installed | grep package_name" ];
 then
     echo " git is installed "
 
