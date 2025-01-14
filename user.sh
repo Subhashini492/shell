@@ -1,13 +1,13 @@
 #!/bin/bash
 echo "welcome to the game"
 read -p "please enter user_name:" user
-if [ "$user" -eq "subhashini" ];
-then
-     echo " "
+if [ "$user" = "subhashini" ]; then
+    echo "Welcome, $user!"
 else
-    echo "please enter valid user_name"
+    echo "Please enter a valid user_name"
     exit 1
 fi
+
 read -p "please enter password:" password
 if [ "$password" -eq "subbu@123" ];
 then
