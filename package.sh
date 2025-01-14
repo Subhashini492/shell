@@ -1,7 +1,7 @@
 #!/bin/bash
-if [ $installed -eq git ];
+if [ $yum list installed | grep package_name  ];
 then
-    echo " yum list installed | grep package_name "
+    echo " git is installed "
 
 else 
     echo " git is not installed "
