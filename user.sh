@@ -11,7 +11,7 @@ fi
 read -p "please enter password:" password
 if [ "$password" -eq "subbu@123" ];
 then
-    echo "ypur good to go "
+    echo "ypur good to go $password "
 else 
     echo "please enter correct password"
     exit 1
