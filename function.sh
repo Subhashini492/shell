@@ -2,7 +2,7 @@
 validation () {
     if [ $1 -eq 0 ];
     then
-    echo "SUCUESS $2"
+        echo "SUCUESS $2"
     else
         echo "FAILED $2"
         exit 1
