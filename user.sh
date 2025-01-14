@@ -5,7 +5,7 @@ if [ $user -eq "subhashini" ];
 then
     
 else
-    echo "please enter valid user name"
+    echo "please enter valid user_name"
     exit 1
 fi
 read -p "please enter password:" password
