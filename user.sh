@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "welcome to the game"
 read -p "please enter user_name:" user
-if [ $user -eq subhashini ];
+if [ "$user" -eq "subhashini" ];
 then
      echo " "
 else
@@ -9,7 +9,7 @@ else
     exit 1
 fi
 read -p "please enter password:" password
-if [ $password -eq subbu@123 ];
+if [ "$password" -eq "subbu@123" ];
 then
     echo " "
 else 
