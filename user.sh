@@ -3,7 +3,6 @@ echo "welcome to the game"
 read -p "please enter user_name:" user
 if [ $user -eq "subhashini" ];
 then
-    
 else
     echo "please enter valid user_name"
     exit 1
