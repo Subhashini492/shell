@@ -2,7 +2,7 @@
 
 PACKAGE_NAME="git"
 
-if yum list installed "$PACKAGE_NAME" &>/dev/null; 
+if [ yum list installed "$PACKAGE_NAME" ]; 
 then
     echo "Package '$PACKAGE_NAME' is already installed. Skipping installation."
 else
