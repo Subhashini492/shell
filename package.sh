@@ -1,9 +1,11 @@
 #!/bin/bash
-if [ "yum list installed | grep package_name" ];
+
+id=$(yum list installed | grep package_name)
+if [ $? -eq 0 ]
 then
-    echo " git is installed "
+    echo " git installed skipped installed "
 
 else 
-    echo " git is not installed "
+    echo " sudo git installed "
     exit 1
 fi
